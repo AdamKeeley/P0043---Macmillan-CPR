@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="IRC-GATE01"
   DTS:CreatorName="IRC\uitake"
-  DTS:DTSID="{1DC8FA06-2280-40F3-AB7F-4540F8FAD57E}"
+  DTS:DTSID="{0E61365D-8F87-442B-8FFA-D3538E14CDC3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.1000.169"
   DTS:LocaleID="2057"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Upload Files"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{573B13FE-5C4B-40A1-8028-D333AB93A0DD}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{5B5BF7CF-2364-4D09-8E31-73A32E18586E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1616,7 +1616,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="varFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">\\irc-vm0097\IRC Data\P0043 - Macmillan CPR\Incoming Data\LTHT\2018-12-14 1148\Unzipped\</DTS:VariableValue>
+        DTS:DataType="8">\\irc-vm0097\IRC Data\P0043 - Macmillan CPR\Incoming Data\LTHT\2019-01-04 1018\unzipped\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1627,7 +1627,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="varFilePathUploaded">
       <DTS:VariableValue
-        DTS:DataType="8">\\irc-vm0097\IRC Data\P0043 - Macmillan CPR\Incoming Data\LTHT\2018-12-14 1148\Unzipped\Uploaded</DTS:VariableValue>
+        DTS:DataType="8">\\irc-vm0097\IRC Data\P0043 - Macmillan CPR\Incoming Data\LTHT\2019-01-04 1018\unzipped\Uploaded</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -1651,6 +1651,23 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Execute dedupe tables proc"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A8D1964C-1CF8-4A5C-B528-3BF6CDF7E96C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute dedupe tables proc"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1AE49ACB-BD77-4296-A55C-E693A2441E63}"
+          SQLTask:SqlStatementSource="exec [dbo].[sp_dedupe_ltht_tables]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Foreach Loop Container"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
@@ -1667,7 +1684,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="\\irc-vm0097\IRC Data\P0043 - Macmillan CPR\Incoming Data\LTHT\2018-12-14 1148\Unzipped\" />
+              Folder="\\irc-vm0097\IRC Data\P0043 - Macmillan CPR\Incoming Data\LTHT\2019-01-04 1018\unzipped\" />
             <FEFEProperty
               FileSpec="*.csv" />
             <FEFEProperty
@@ -5423,14 +5440,6 @@
                           externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CancerMorphology_atAnyDate]"
                           lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CancerMorphology_atAnyDate]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BRCASstatus_atAnyDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="BRCASstatus_atAnyDate"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCASstatus_atAnyDate]"
-                          lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source.Outputs[Flat File Source Output].Columns[BRCASstatus_atAnyDate]" />
-                        <inputColumn
                           refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EGFRmutation_atAnyDate]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -5438,14 +5447,6 @@
                           cachedName="EGFRmutation_atAnyDate"
                           externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRmutation_atAnyDate]"
                           lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source.Outputs[Flat File Source Output].Columns[EGFRmutation_atAnyDate]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EGFRT790Resistancemutation_atAnyDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="EGFRT790Resistancemutation_atAnyDate"
-                          externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790Resistancemutation_atAnyDate]"
-                          lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source.Outputs[Flat File Source Output].Columns[EGFRT790Resistancemutation_atAnyDate]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ALKmutation_atAnyDate]"
                           cachedCodepage="1252"
@@ -5486,6 +5487,22 @@
                           cachedName="KRASmutation_atAnyDate"
                           externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[KRASmutation_atAnyDate]"
                           lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source.Outputs[Flat File Source Output].Columns[KRASmutation_atAnyDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BRCASstatus_atAnyDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="BRCASstatus_atAnyDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCAstatus_atAnyDate]"
+                          lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source.Outputs[Flat File Source Output].Columns[BRCASstatus_atAnyDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EGFRT790Resistancemutation_atAnyDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="EGFRT790Resistancemutation_atAnyDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790resistanceMutation_atAnyDate]"
+                          lineageId="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source.Outputs[Flat File Source Output].Columns[EGFRT790Resistancemutation_atAnyDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5576,23 +5593,11 @@
                           length="200"
                           name="HER2status_atAnyDate" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCASstatus_atAnyDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="BRCASstatus_atAnyDate" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRmutation_atAnyDate]"
                           codePage="1252"
                           dataType="str"
                           length="200"
                           name="EGFRmutation_atAnyDate" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790Resistancemutation_atAnyDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="EGFRT790Resistancemutation_atAnyDate" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKmutation_atAnyDate]"
                           codePage="1252"
@@ -5623,6 +5628,18 @@
                           dataType="str"
                           length="200"
                           name="KRASmutation_atAnyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCAstatus_atAnyDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="BRCAstatus_atAnyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790resistanceMutation_atAnyDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="EGFRT790resistanceMutation_atAnyDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -8421,14 +8438,6 @@
                           externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CancerMorphology_atIndexDate]"
                           lineageId="Package\Foreach Loop Container\IndexAttributesCases\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CancerMorphology_atIndexDate]" />
                         <inputColumn
-                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BRCASstatus_atIndexDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="BRCASstatus_atIndexDate"
-                          externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCASstatus_atIndexDate]"
-                          lineageId="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source.Outputs[Flat File Source Output].Columns[BRCASstatus_atIndexDate]" />
-                        <inputColumn
                           refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EGFRmutation_atIndexDate]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -8436,14 +8445,6 @@
                           cachedName="EGFRmutation_atIndexDate"
                           externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRmutation_atIndexDate]"
                           lineageId="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source.Outputs[Flat File Source Output].Columns[EGFRmutation_atIndexDate]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EGFRT790Resistancemutation_atIndexDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="EGFRT790Resistancemutation_atIndexDate"
-                          externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790Resistancemutation_atIndexDate]"
-                          lineageId="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source.Outputs[Flat File Source Output].Columns[EGFRT790Resistancemutation_atIndexDate]" />
                         <inputColumn
                           refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ALKmutation_atIndexDate]"
                           cachedCodepage="1252"
@@ -8496,6 +8497,22 @@
                           cachedName="Copy of PromsCohort"
                           externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromsCohort]"
                           lineageId="Package\Foreach Loop Container\IndexAttributesCases\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PromsCohort]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BRCASstatus_atIndexDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="BRCASstatus_atIndexDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCAstatus_atIndexDate]"
+                          lineageId="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source.Outputs[Flat File Source Output].Columns[BRCASstatus_atIndexDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EGFRT790Resistancemutation_atIndexDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="EGFRT790Resistancemutation_atIndexDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790resistanceMutation_atIndexDate]"
+                          lineageId="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source.Outputs[Flat File Source Output].Columns[EGFRT790Resistancemutation_atIndexDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8582,23 +8599,11 @@
                           length="200"
                           name="HER2status_atIndexDate" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCASstatus_atIndexDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="BRCASstatus_atIndexDate" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRmutation_atIndexDate]"
                           codePage="1252"
                           dataType="str"
                           length="200"
                           name="EGFRmutation_atIndexDate" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790Resistancemutation_atIndexDate]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="EGFRT790Resistancemutation_atIndexDate" />
                         <externalMetadataColumn
                           refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ALKmutation_atIndexDate]"
                           codePage="1252"
@@ -8637,6 +8642,18 @@
                           refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromsPilot]"
                           dataType="i4"
                           name="PromsPilot" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BRCAstatus_atIndexDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="BRCAstatus_atIndexDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EGFRT790resistanceMutation_atIndexDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="EGFRT790resistanceMutation_atIndexDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -9868,11 +9885,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="64"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Digest]"
                           name="Copy of Digest"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -9889,10 +9906,10 @@
                           refId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationID]"
                           name="Copy of InvestigationID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -9909,10 +9926,10 @@
                           refId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyDate]"
                           name="Copy of PathologyDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -9930,11 +9947,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologySpecimenType]"
                           name="Copy of PathologySpecimenType"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -9952,11 +9969,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologySampleSite]"
                           name="Copy of PathologySampleSite"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -9974,11 +9991,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyMorphologyLabel]"
                           name="Copy of PathologyMorphologyLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -9996,11 +10013,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="100"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyMorphologyCDS]"
                           name="Copy of PathologyMorphologyCDS"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10018,11 +10035,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyMarginLabel]"
                           name="Copy of PathologyMarginLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10039,10 +10056,10 @@
                           refId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyInvestigationType]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PathologyInvestigationType]"
                           name="Copy of PathologyInvestigationType"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10059,10 +10076,10 @@
                           refId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationDate]"
                           name="Copy of InvestigationDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10080,11 +10097,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="400"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationLabel]"
                           name="Copy of InvestigationLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10101,10 +10118,10 @@
                           refId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationEventDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationEventDate]"
                           name="Copy of InvestigationEventDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10122,11 +10139,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="400"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationResults]"
                           name="Copy of InvestigationResults"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -10144,11 +10161,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="500"
                           lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of InvestigationTypeAndSite]"
                           name="Copy of InvestigationTypeAndSite"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -11392,8 +11409,378 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[PipelineErrors]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="{1AE49ACB-BD77-4296-A55C-E693A2441E63}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IRC-VM0097.P0043]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Digest]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="Digest"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[a]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[Digest]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvestigationID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvestigationID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[b]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvestigationID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologyDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologyDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[c]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologyDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologySpecimenType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologySpecimenType"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[d]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologySpecimenType]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologySampleSite]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologySampleSite"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[e]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologySampleSite]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologyMorphologyLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologyMorphologyLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[f]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologyMorphologyLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologyMorphologyCDS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologyMorphologyCDS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[g]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologyMorphologyCDS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologyMarginLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologyMarginLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[h]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologyMarginLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PathologyInvestigationType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="PathologyInvestigationType"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[i]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[PathologyInvestigationType]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvestigationDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvestigationDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[j]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvestigationDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvestigationLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvestigationLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[k]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvestigationLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvestigationEventDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvestigationEventDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[l]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvestigationEventDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvstigationDetails]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvstigationDetails"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[m]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvstigationDetails]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvestigationResults]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvestigationResults"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[n]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvestigationResults]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[InvestigationTypeAndSite]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="InvestigationTypeAndSite"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[o]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Flat File Source.Outputs[Flat File Source Output].Columns[InvestigationTypeAndSite]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                          cachedDataType="i4"
+                          cachedName="ErrorCode"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[p]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                          cachedDataType="i4"
+                          cachedName="ErrorColumn"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[q]"
+                          lineageId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[a]"
+                          codePage="1252"
+                          dataType="text"
+                          name="a" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[b]"
+                          codePage="1252"
+                          dataType="text"
+                          name="b" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[c]"
+                          codePage="1252"
+                          dataType="text"
+                          name="c" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[d]"
+                          codePage="1252"
+                          dataType="text"
+                          name="d" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[e]"
+                          codePage="1252"
+                          dataType="text"
+                          name="e" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[f]"
+                          codePage="1252"
+                          dataType="text"
+                          name="f" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[g]"
+                          codePage="1252"
+                          dataType="text"
+                          name="g" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[h]"
+                          codePage="1252"
+                          dataType="text"
+                          name="h" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[i]"
+                          codePage="1252"
+                          dataType="text"
+                          name="i" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[j]"
+                          codePage="1252"
+                          dataType="text"
+                          name="j" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[k]"
+                          codePage="1252"
+                          dataType="text"
+                          name="k" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[l]"
+                          codePage="1252"
+                          dataType="text"
+                          name="l" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[m]"
+                          codePage="1252"
+                          dataType="text"
+                          name="m" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[n]"
+                          codePage="1252"
+                          dataType="text"
+                          name="n" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[o]"
+                          codePage="1252"
+                          dataType="text"
+                          name="o" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[p]"
+                          codePage="1252"
+                          dataType="text"
+                          name="p" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[q]"
+                          codePage="1252"
+                          dataType="text"
+                          name="q" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[r]"
+                          codePage="1252"
+                          dataType="text"
+                          name="r" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[s]"
+                          codePage="1252"
+                          dataType="text"
+                          name="s" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[t]"
+                          codePage="1252"
+                          dataType="text"
+                          name="t" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[u]"
+                          codePage="1252"
+                          dataType="text"
+                          name="u" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[v]"
+                          codePage="1252"
+                          dataType="text"
+                          name="v" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[w]"
+                          codePage="1252"
+                          dataType="text"
+                          name="w" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[x]"
+                          codePage="1252"
+                          dataType="text"
+                          name="x" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[y]"
+                          codePage="1252"
+                          dataType="text"
+                          name="y" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[z]"
+                          codePage="1252"
+                          dataType="text"
+                          name="z" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Investigations.Paths[Data Conversion Error Output]"
+                  endId="Package\Foreach Loop Container\Investigations\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Error Output"
+                  startId="Package\Foreach Loop Container\Investigations\Data Conversion.Outputs[Data Conversion Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Investigations.Paths[Data Conversion Output]"
                   endId="Package\Foreach Loop Container\Investigations\OLE DB Destination.Inputs[OLE DB Destination Input]"
@@ -13763,7 +14150,7 @@
                           cachedDataType="str"
                           cachedLength="510"
                           cachedName="DeathCause2"
-                          externalMetadataColumnId="Package\Foreach Loop Container\PatientInformation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeathCause2 ]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\PatientInformation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeathCause2]"
                           lineageId="Package\Foreach Loop Container\PatientInformation\Flat File Source.Outputs[Flat File Source Output].Columns[DeathCause2]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -13843,11 +14230,11 @@
                           length="510"
                           name="DeathCause1C" />
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\PatientInformation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeathCause2 ]"
+                          refId="Package\Foreach Loop Container\PatientInformation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeathCause2]"
                           codePage="1252"
                           dataType="str"
                           length="510"
-                          name="DeathCause2 " />
+                          name="DeathCause2" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -14925,11 +15312,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="64"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Digest]"
                           name="Copy of Digest"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -14946,10 +15333,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TreatmentID]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TreatmentID]"
                           name="Copy of TreatmentID"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -14966,10 +15353,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryDate]"
                           name="Copy of SurgeryDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -14987,11 +15374,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="300"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryActionStatus]"
                           name="Copy of SurgeryActionStatus"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15009,11 +15396,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="300"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryOperationReason]"
                           name="Copy of SurgeryOperationReason"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15031,11 +15418,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryIntent]"
                           name="Copy of SurgeryIntent"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15053,11 +15440,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryOutcomeLabel]"
                           name="Copy of SurgeryOutcomeLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15075,11 +15462,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SurgeryResidualDisease]"
                           name="Copy of SurgeryResidualDisease"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15096,10 +15483,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoCycleNum]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoCycleNum]"
                           name="Copy of ChemoCycleNum"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15116,10 +15503,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoCycleStartDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoCycleStartDate]"
                           name="Copy of ChemoCycleStartDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15136,10 +15523,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugStartDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugStartDate]"
                           name="Copy of ChemoDrugStartDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15156,10 +15543,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenStartDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenStartDate]"
                           name="Copy of ChemoRegimenStartDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15176,10 +15563,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenEndDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenEndDate]"
                           name="Copy of ChemoRegimenEndDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15196,10 +15583,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenDecisionDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenDecisionDate]"
                           name="Copy of ChemoRegimenDecisionDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15217,11 +15604,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenIntent]"
                           name="Copy of ChemoRegimenIntent"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15239,11 +15626,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenDrugLabel]"
                           name="Copy of ChemoRegimenDrugLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15260,10 +15647,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenExpectedDuration]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenExpectedDuration]"
                           name="Copy of ChemoRegimenExpectedDuration"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15281,11 +15668,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugLabel]"
                           name="Copy of ChemoDrugLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15303,11 +15690,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="40"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugDeliveryRoute]"
                           name="Copy of ChemoDrugDeliveryRoute"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15324,10 +15711,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugRequiredDose]"
                           dataType="r4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugRequiredDose]"
                           name="Copy of ChemoDrugRequiredDose"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15344,10 +15731,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugActualDose]"
                           dataType="r4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugActualDose]"
                           name="Copy of ChemoDrugActualDose"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15365,11 +15752,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="20"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugFrequency]"
                           name="Copy of ChemoDrugFrequency"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15387,11 +15774,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenOutcome]"
                           name="Copy of ChemoRegimenOutcome"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15409,11 +15796,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoRegimenLabel]"
                           name="Copy of ChemoRegimenLabel"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15430,10 +15817,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoCycleExpectedDuration]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoCycleExpectedDuration]"
                           name="Copy of ChemoCycleExpectedDuration"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15451,11 +15838,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoDrugTherapyType]"
                           name="Copy of ChemoDrugTherapyType"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15473,11 +15860,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoStoppingReason]"
                           name="Copy of ChemoStoppingReason"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15495,11 +15882,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ChemoClinicalTrialYN]"
                           name="Copy of ChemoClinicalTrialYN"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15517,11 +15904,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="100"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioSite]"
                           name="Copy of RadioSite"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15539,11 +15926,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="100"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioIntent]"
                           name="Copy of RadioIntent"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15560,10 +15947,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioStartDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioStartDate]"
                           name="Copy of RadioStartDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15580,10 +15967,10 @@
                           refId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioEndDate]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioEndDate]"
                           name="Copy of RadioEndDate"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15601,11 +15988,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="200"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RadioType]"
                           name="Copy of RadioType"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -15623,11 +16010,11 @@
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
+                          errorRowDisposition="RedirectRow"
                           length="40"
                           lineageId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Source]"
                           name="Copy of Source"
-                          truncationRowDisposition="FailComponent">
+                          truncationRowDisposition="RedirectRow">
                           <properties>
                             <property
                               containsID="true"
@@ -18175,8 +18562,454 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[PipelineErrors]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="{1AE49ACB-BD77-4296-A55C-E693A2441E63}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[IRC-VM0097.P0043]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Digest]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="Digest"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[a]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[Digest]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[TreatmentID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="TreatmentID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[b]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[TreatmentID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[c]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryActionStatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryActionStatus"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[d]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryActionStatus]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryOperationReason]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryOperationReason"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[e]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryOperationReason]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryIntent]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryIntent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[f]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryIntent]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryProcedureLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryProcedureLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[g]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryProcedureLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryOutcomeLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryOutcomeLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[h]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryOutcomeLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SurgeryResidualDisease]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="SurgeryResidualDisease"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[i]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[SurgeryResidualDisease]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoCycleNum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoCycleNum"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[j]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoCycleNum]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoCycleStartDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoCycleStartDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[k]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoCycleStartDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoDrugStartDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoDrugStartDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[l]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoDrugStartDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenStartDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenStartDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[m]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenStartDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenEndDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenEndDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[n]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenEndDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenDecisionDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenDecisionDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[o]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenDecisionDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenIntent]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenIntent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[p]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenIntent]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenDrugLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenDrugLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[q]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenDrugLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenExpectedDuration]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenExpectedDuration"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[r]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenExpectedDuration]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoDrugLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoDrugLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[s]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoDrugLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoDrugDeliveryRoute]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoDrugDeliveryRoute"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[t]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoDrugDeliveryRoute]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoDrugRequiredDose]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoDrugRequiredDose"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[u]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoDrugRequiredDose]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoDrugActualDose]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoDrugActualDose"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[v]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoDrugActualDose]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoDrugFrequency]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoDrugFrequency"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[w]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoDrugFrequency]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenOutcome]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenOutcome"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[x]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenOutcome]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoRegimenLabel]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoRegimenLabel"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[y]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoRegimenLabel]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ChemoCycleExpectedDuration]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1000"
+                          cachedName="ChemoCycleExpectedDuration"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[z]"
+                          lineageId="Package\Foreach Loop Container\Treatment\Flat File Source.Outputs[Flat File Source Output].Columns[ChemoCycleExpectedDuration]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[a]"
+                          codePage="1252"
+                          dataType="text"
+                          name="a" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[b]"
+                          codePage="1252"
+                          dataType="text"
+                          name="b" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[c]"
+                          codePage="1252"
+                          dataType="text"
+                          name="c" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[d]"
+                          codePage="1252"
+                          dataType="text"
+                          name="d" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[e]"
+                          codePage="1252"
+                          dataType="text"
+                          name="e" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[f]"
+                          codePage="1252"
+                          dataType="text"
+                          name="f" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[g]"
+                          codePage="1252"
+                          dataType="text"
+                          name="g" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[h]"
+                          codePage="1252"
+                          dataType="text"
+                          name="h" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[i]"
+                          codePage="1252"
+                          dataType="text"
+                          name="i" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[j]"
+                          codePage="1252"
+                          dataType="text"
+                          name="j" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[k]"
+                          codePage="1252"
+                          dataType="text"
+                          name="k" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[l]"
+                          codePage="1252"
+                          dataType="text"
+                          name="l" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[m]"
+                          codePage="1252"
+                          dataType="text"
+                          name="m" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[n]"
+                          codePage="1252"
+                          dataType="text"
+                          name="n" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[o]"
+                          codePage="1252"
+                          dataType="text"
+                          name="o" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[p]"
+                          codePage="1252"
+                          dataType="text"
+                          name="p" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[q]"
+                          codePage="1252"
+                          dataType="text"
+                          name="q" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[r]"
+                          codePage="1252"
+                          dataType="text"
+                          name="r" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[s]"
+                          codePage="1252"
+                          dataType="text"
+                          name="s" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[t]"
+                          codePage="1252"
+                          dataType="text"
+                          name="t" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[u]"
+                          codePage="1252"
+                          dataType="text"
+                          name="u" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[v]"
+                          codePage="1252"
+                          dataType="text"
+                          name="v" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[w]"
+                          codePage="1252"
+                          dataType="text"
+                          name="w" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[x]"
+                          codePage="1252"
+                          dataType="text"
+                          name="x" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[y]"
+                          codePage="1252"
+                          dataType="text"
+                          name="y" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[z]"
+                          codePage="1252"
+                          dataType="text"
+                          name="z" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Treatment.Paths[Data Conversion Error Output]"
+                  endId="Package\Foreach Loop Container\Treatment\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Error Output"
+                  startId="Package\Foreach Loop Container\Treatment\Data Conversion.Outputs[Data Conversion Error Output]" />
                 <path
                   refId="Package\Foreach Loop Container\Treatment.Paths[Data Conversion Output]"
                   endId="Package\Foreach Loop Container\Treatment\OLE DB Destination.Inputs[OLE DB Destination Input]"
@@ -18306,6 +19139,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E1E26A1-5B6D-4604-A660-BE10E5575EE2}"
+      DTS:From="Package\Foreach Loop Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute dedupe tables proc" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -18322,7 +19163,7 @@
         <NodeLayout
           Size="202,42"
           Id="Package\Create Uploaded directory"
-          TopLeft="77,266" />
+          TopLeft="220,266" />
         <NodeLayout
           Size="131,42"
           Id="Package\Foreach Loop Container\Admissions"
@@ -18691,10 +19532,10 @@
           PanelSize="657,409"
           Size="657,452"
           Id="Package\Foreach Loop Container"
-          TopLeft="336,67" />
+          TopLeft="479,67" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="279,290">
+          TopLeft="422,290">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18720,7 +19561,33 @@
           FontInfo="{assembly:Null}"
           Size="146,56"
           Id="88de85f0-4b74-47b7-a394-1409c031b239"
-          TopLeft="109,114" />
+          TopLeft="252,114" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Execute dedupe tables proc"
+          TopLeft="215,342" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="479,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55,0"
+              Start="0,0"
+              End="-47.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-47.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -18728,7 +19595,7 @@
     design-time-name="Package\Foreach Loop Container\Admissions">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Foreach Loop Container\Admissions\Flat File Source"
@@ -18764,7 +19631,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18786,7 +19655,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18808,7 +19679,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18831,7 +19704,7 @@
     design-time-name="Package\Foreach Loop Container\Comorbidity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Comorbidity\OLE DB Destination"
@@ -18867,7 +19740,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18889,7 +19764,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18911,7 +19788,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18934,11 +19813,7 @@
     design-time-name="Package\Foreach Loop Container\DiagnosticAttributes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source"
-          TopLeft="15.5,5.5" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\DiagnosticAttributes\OLE DB Destination"
@@ -18951,6 +19826,10 @@
           Size="156,42"
           Id="Package\Foreach Loop Container\DiagnosticAttributes\Data Conversion"
           TopLeft="13,209.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\DiagnosticAttributes\Flat File Source"
+          TopLeft="15.5,5.5" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\DiagnosticAttributes.Paths[Flat File Source Output]"
           TopLeft="91,47.5">
@@ -18970,7 +19849,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18992,7 +19873,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19014,7 +19897,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19037,7 +19922,7 @@
     design-time-name="Package\Foreach Loop Container\HeightAndWeight">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Foreach Loop Container\HeightAndWeight\Flat File Source"
@@ -19073,7 +19958,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19095,7 +19982,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19117,7 +20006,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19140,23 +20031,23 @@
     design-time-name="Package\Foreach Loop Container\IndexAttributesCases">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Foreach Loop Container\IndexAttributesCases\Derived Column"
-          TopLeft="14,107.5" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source"
-          TopLeft="15.5,5.5" />
+          Size="171,42"
+          Id="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination"
+          TopLeft="5.50000000000003,311.5" />
         <NodeLayout
           Size="156,42"
           Id="Package\Foreach Loop Container\IndexAttributesCases\Data Conversion"
           TopLeft="13,209.5" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\IndexAttributesCases\OLE DB Destination"
-          TopLeft="5.50000000000003,311.5" />
+          Size="151,42"
+          Id="Package\Foreach Loop Container\IndexAttributesCases\Flat File Source"
+          TopLeft="15.5,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Foreach Loop Container\IndexAttributesCases\Derived Column"
+          TopLeft="14,107.5" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\IndexAttributesCases.Paths[Flat File Source Output]"
           TopLeft="91,47.5">
@@ -19176,7 +20067,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19198,7 +20091,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19220,7 +20115,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19243,7 +20140,7 @@
     design-time-name="Package\Foreach Loop Container\IndexAttributesControls">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\IndexAttributesControls\OLE DB Destination"
@@ -19260,28 +20157,6 @@
           Size="151,42"
           Id="Package\Foreach Loop Container\IndexAttributesControls\Flat File Source"
           TopLeft="15.5,5.5" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\IndexAttributesControls.Paths[Data Conversion Output]"
-          TopLeft="91,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\IndexAttributesControls.Paths[Flat File Source Output]"
           TopLeft="91,47.5">
@@ -19301,7 +20176,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19323,7 +20200,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\IndexAttributesControls.Paths[Data Conversion Output]"
+          TopLeft="91,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19346,45 +20249,27 @@
     design-time-name="Package\Foreach Loop Container\Investigations">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Investigations\OLE DB Destination"
           TopLeft="5.50000000000003,311.5" />
         <NodeLayout
+          Size="154,42"
+          Id="Package\Foreach Loop Container\Investigations\Derived Column"
+          TopLeft="14,107.5" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Foreach Loop Container\Investigations\Flat File Source"
           TopLeft="15.5,5.5" />
         <NodeLayout
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Investigations\OLE DB Destination 1"
+          TopLeft="324,217" />
+        <NodeLayout
           Size="156,42"
           Id="Package\Foreach Loop Container\Investigations\Data Conversion"
           TopLeft="13,209.5" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Foreach Loop Container\Investigations\Derived Column"
-          TopLeft="14,107.5" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container\Investigations.Paths[Flat File Source Output]"
-          TopLeft="91,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container\Investigations.Paths[Derived Column Output]"
           TopLeft="91,149.5">
@@ -19429,6 +20314,52 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Investigations.Paths[Data Conversion Error Output]"
+          TopLeft="169,234.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155,0"
+              Start="0,0"
+              End="147.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="147.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="7.66361328125001,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Investigations.Paths[Flat File Source Output]"
+          TopLeft="91,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -19445,11 +20376,24 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Investigations\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Foreach Loop Container\Outpatients">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Foreach Loop Container\Outpatients\Derived Column"
@@ -19485,7 +20429,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19507,7 +20453,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19529,7 +20477,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19552,11 +20502,7 @@
     design-time-name="Package\Foreach Loop Container\PatientInformation">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\PatientInformation\OLE DB Destination"
-          TopLeft="5.50000000000003,311.5" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Foreach Loop Container\PatientInformation\Flat File Source"
@@ -19565,6 +20511,10 @@
           Size="156,42"
           Id="Package\Foreach Loop Container\PatientInformation\Data Conversion"
           TopLeft="13,209.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\PatientInformation\OLE DB Destination"
+          TopLeft="5.50000000000003,311.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Foreach Loop Container\PatientInformation\Derived Column"
@@ -19588,7 +20538,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19610,7 +20562,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19632,7 +20586,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19655,7 +20611,7 @@
     design-time-name="Package\Foreach Loop Container\PerformanceStatus">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\PerformanceStatus\OLE DB Destination"
@@ -19691,7 +20647,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19713,7 +20671,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19735,7 +20695,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19758,7 +20720,11 @@
     design-time-name="Package\Foreach Loop Container\Treatment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Foreach Loop Container\Treatment\OLE DB Destination 1"
+          TopLeft="399,214" />
         <NodeLayout
           Size="171,42"
           Id="Package\Foreach Loop Container\Treatment\OLE DB Destination"
@@ -19768,13 +20734,13 @@
           Id="Package\Foreach Loop Container\Treatment\Derived Column"
           TopLeft="14,107.5" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Foreach Loop Container\Treatment\Flat File Source"
-          TopLeft="15.5,5.5" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Foreach Loop Container\Treatment\Data Conversion"
           TopLeft="13,209.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Loop Container\Treatment\Flat File Source"
+          TopLeft="15.5,5.5" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Treatment.Paths[Flat File Source Output]"
           TopLeft="91,47.5">
@@ -19794,7 +20760,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19816,7 +20784,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19838,7 +20808,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Treatment.Paths[Data Conversion Error Output]"
+          TopLeft="169,232.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="230,0"
+              Start="0,0"
+              End="222.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="222.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="45.16361328125,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -19846,6 +20842,19 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Foreach Loop Container\Treatment\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Treatment\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

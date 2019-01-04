@@ -26,11 +26,11 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">IRC-GATE01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfleO1A0goEGjFQEuO/fVQAAAAAACAAAAAAADZgAAwAAAABAAAADFoPYkI9LNr2qj0EFliZJ4AAAAAASAAACgAAAAEAAAAK7esT2wxmdEDTaBUNf/1uiIAAAAFDstl1gFqN5T+EOcVA3VWYPNrKrCN7UMitFpAfgCYxs8qvrrwoaxLAV9R8/HGMiG593AIN5ekf6a3D/Dv9ImaHlGVZpbW5UlqeFSqV64y2kyPyd0CaWhIhWSZERTx/+ybqDbNhOC6Cg+S2OERTYLNnl1GlwGSNV0ruuroZNyvTu4tEatam1i0BQAAAB9hp9EiUrbw99wOrxUgEIgB8KLMw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfleO1A0goEGjFQEuO/fVQAAAAAACAAAAAAADZgAAwAAAABAAAABV5YJnS9l3uFiy/i9xAmsMAAAAAASAAACgAAAAEAAAANIo5QQRJZU8jJi/rNulJU+IAAAAme8nhvtYSnMsXECSPiQqOBe2P649F15qzU21xTuo5VVYA9r5110OORR2O93vXFuUgNHXhVvRjkudeugd302gFaVNBoaePfsWUFPmpkGEq+5rDdm4w1t30kkT3st11vUb0r4WMfYmr6eH6SzCBRXl0zA3v61GQR6BQTViR9Pt14GyNMToy1oWeRQAAADQE+BM34eSBh71W+jaop9G5HSjxg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Package.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Upload Files.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="IRC-VM0097.P0043.conmgr" />
@@ -127,16 +127,16 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Package.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Upload Files.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{1DC8FA06-2280-40F3-AB7F-4540F8FAD57E}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{0E61365D-8F87-442B-8FFA-D3538E14CDC3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Upload Files</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B1D3AE8D-58DD-48EA-BB49-113D756C57A9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5B5BF7CF-2364-4D09-8E31-73A32E18586E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
