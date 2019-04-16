@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Upload Files"
   DTS:PackageType="5"
-  DTS:VersionBuild="100"
-  DTS:VersionGUID="{53333605-CA7A-4996-8C2D-8A7D093C4D48}">
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{B5FAAA55-4678-48E1-986D-6288C7A63C5C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2226,23 +2226,23 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="PatientId"
-              DTS:DTSID="{FD9D727D-F393-440D-A981-D9D53264BFB2}"
+              DTS:DTSID="{8CA18B37-B5F8-4D1D-873F-47460AD692E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="134"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="StartDate"
-              DTS:DTSID="{93EC96BE-2D3D-4C19-9951-E900D1816DE2}"
+              DTS:DTSID="{3F4251E8-CADB-4581-A331-0E544F75F75D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="134"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="EndDate"
-              DTS:DTSID="{DE89B90A-BA7B-4692-877C-A3D04F11DDEA}"
+              DTS:DTSID="{7128E4F8-55B3-4928-AEBD-72539476736D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2250,7 +2250,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="IMDRank"
-              DTS:DTSID="{9EBB3D27-1742-42FA-B7B7-84AB8FAC3A68}"
+              DTS:DTSID="{D630930F-148E-43A3-A324-632CA33061B9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2258,7 +2258,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="Rurality_CombinedCode"
-              DTS:DTSID="{ECF6DB38-BBE8-4D62-8394-914936059DF1}"
+              DTS:DTSID="{40791455-1B4E-46EC-A9CD-4597DCE5365C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2267,7 +2267,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PostcodeSector"
-              DTS:DTSID="{8275EB43-D734-4A59-B0B7-B36FA22306F4}"
+              DTS:DTSID="{E714FEB4-84B9-42BB-A569-D240AB63D40C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2296,7 +2296,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="PatientId"
-              DTS:DTSID="{ED33EA11-C1E3-48E3-8D48-C8DC230FEE75}"
+              DTS:DTSID="{71871A9E-8E5A-4768-B93A-4D8B496EF671}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2304,15 +2304,15 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="EventId"
-              DTS:DTSID="{2CBE2C81-FDC6-4FB0-AE03-242BE38144BB}"
+              DTS:DTSID="{1173B8B9-A31B-4BFE-844D-3F0DA4FF7AC4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="134"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="EventDate"
-              DTS:DTSID="{138FD3F2-9A1A-48B2-AFE5-526ED39346BE}"
+              DTS:DTSID="{9DA31258-9DD7-41C2-8CE8-A83E5BEF2C93}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2321,7 +2321,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CTV3Code"
-              DTS:DTSID="{ED043113-109C-4B66-9F73-513D59647251}"
+              DTS:DTSID="{7E6FDF35-1D1C-4489-AA87-5968207333D3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2330,7 +2330,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CTV3TermText"
-              DTS:DTSID="{58CC1767-92D6-4176-80FD-E62C3D45B068}"
+              DTS:DTSID="{C3B48F5A-A037-407B-917F-5734C6AD509D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2338,7 +2338,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="NumberValue"
-              DTS:DTSID="{F11B4E50-29B2-4368-AE71-F81C3076FFBC}"
+              DTS:DTSID="{E8260102-AB6F-4E4A-BBE3-FFCA6B51BC77}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2347,7 +2347,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Units"
-              DTS:DTSID="{9D9F45D6-5436-407F-822E-783FB301AEFC}"
+              DTS:DTSID="{2F2E3E49-DA2C-4A26-9FE7-3B02499D5802}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2355,7 +2355,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="NumericPrecision"
-              DTS:DTSID="{13FC1A1C-5516-4AC6-BB46-3900C6BCF019}"
+              DTS:DTSID="{1D3A2C45-3CEB-401D-B3DF-6364E0B495D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2363,7 +2363,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="LowerBound"
-              DTS:DTSID="{EB4F1F1E-75A5-4668-85CD-DFC713BACBF1}"
+              DTS:DTSID="{B0822DB6-D941-4FF2-83AE-E51685889F6D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2371,7 +2371,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="UpperBound"
-              DTS:DTSID="{D1CB8DF3-AAE7-4B88-9201-704C32A78D04}"
+              DTS:DTSID="{AC052850-9DE9-48C5-BAE4-6ADAC9E5CA29}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2380,7 +2380,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="RangeComparisonIndicator"
-              DTS:DTSID="{F90EB5FC-214E-438F-A8AA-9CCFA9088647}"
+              DTS:DTSID="{68E63BF3-A186-460E-B406-AA754AE45504}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2409,7 +2409,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="PatientId"
-              DTS:DTSID="{1F5D333B-49EF-4090-BA38-22B442421041}"
+              DTS:DTSID="{C4C3712E-9A06-4657-99B6-8E0FD16F08F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2418,15 +2418,15 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EthnicityCode"
-              DTS:DTSID="{6049960D-46DB-485C-8CD8-00A452977CEB}"
+              DTS:DTSID="{D64C4463-D674-44C8-88A9-59D7A1827E86}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:DataType="134"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="RecordedDate"
-              DTS:DTSID="{29870021-A40F-42C5-9D28-E06B3ADBD571}"
+              DTS:DTSID="{FB366107-C18C-4A81-B2F6-2799151AEC87}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -2455,7 +2455,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="PatientId"
-              DTS:DTSID="{6156FB87-7BF0-4E86-8CCE-064BA46ABDD0}"
+              DTS:DTSID="{B19DF775-FC7A-4326-B7FE-68BADE61662B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2463,7 +2463,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="PracticeId"
-              DTS:DTSID="{3EA0C207-7031-4C77-A72A-6B2888CE6ECF}"
+              DTS:DTSID="{0A347A61-4872-4560-AA36-7D1AB75D69D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2472,23 +2472,23 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Description"
-              DTS:DTSID="{138A8EBF-2F19-479B-9B4A-30F40D525965}"
+              DTS:DTSID="{647E6A43-0FFC-4CC6-9B8A-03757702480F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="134"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="RegistrationDate"
-              DTS:DTSID="{F8B76B1D-490D-4D01-8D62-157642A7C293}"
+              DTS:DTSID="{1DB8D4F0-A48C-4699-9B81-F9451400D088}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="134"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="DeductionDate"
-              DTS:DTSID="{E5B74EF9-A44E-443B-8A70-55B3353E0EAB}"
+              DTS:DTSID="{0AFAD9AE-88E6-497F-AAA8-3005E511828A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2497,7 +2497,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AppliedGMS"
-              DTS:DTSID="{77BBF1BE-014B-491C-BA88-967E0096BA51}"
+              DTS:DTSID="{2574D79C-5F34-4191-8BDC-4E465C9A7BEC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2506,7 +2506,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FullyGMS"
-              DTS:DTSID="{14790D1A-2CEC-4F0E-8D0C-05721CCD9F29}"
+              DTS:DTSID="{73C5CDD2-A06D-4947-9E6A-4EBBF24CD472}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2515,7 +2515,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TemporaryResidentShort"
-              DTS:DTSID="{8B68D227-5091-481F-AD21-922BB48A4366}"
+              DTS:DTSID="{7050EA93-9243-4BA4-A571-FA72F94FECB1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2524,7 +2524,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TemporaryResidentLong"
-              DTS:DTSID="{819551E2-A96C-4962-864C-8C488F1B1286}"
+              DTS:DTSID="{E18F970D-2CB2-4B4E-93CF-126E144509B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2533,7 +2533,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Contraception"
-              DTS:DTSID="{47AE731B-5CA4-46D1-A925-79ABF9CCFCC4}"
+              DTS:DTSID="{654FB1DD-C577-462B-B6C8-7BAD876D94E0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2542,7 +2542,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Maternity"
-              DTS:DTSID="{DBD2F492-539D-491D-9D0D-0FBAF02F4D1D}"
+              DTS:DTSID="{2F507806-B804-4711-A9B0-E3621066CBCC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -2551,7 +2551,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Private"
-              DTS:DTSID="{C8D0D50C-1960-4A99-A0F2-632811658C41}"
+              DTS:DTSID="{D992AE74-942E-462E-8ECD-B61BD021D6C4}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -29841,7 +29841,7 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].Columns[StartDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartDate]"
@@ -29861,7 +29861,7 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].Columns[EndDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndDate]"
@@ -29950,11 +29950,11 @@
                               name="PatientId" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               name="StartDate" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               name="EndDate" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[IMDRank]"
@@ -30081,13 +30081,13 @@
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].Columns[PatientId]" />
                             <inputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StartDate]"
-                              cachedDataType="dbTime"
+                              cachedDataType="dbDate"
                               cachedName="StartDate"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Addresses\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].Columns[StartDate]" />
                             <inputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Addresses\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EndDate]"
-                              cachedDataType="dbTime"
+                              cachedDataType="dbDate"
                               cachedName="EndDate"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Addresses\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Addresses\Flat File Source.Outputs[Flat File Source Output].Columns[EndDate]" />
@@ -30303,7 +30303,7 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Covariates\Flat File Source.Outputs[Flat File Source Output].Columns[EventDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Covariates\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EventDate]"
@@ -30502,7 +30502,7 @@
                               name="EventId" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Covariates\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EventDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               name="EventDate" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Covariates\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CTV3Code]"
@@ -30661,7 +30661,7 @@
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Covariates\Flat File Source.Outputs[Flat File Source Output].Columns[EventId]" />
                             <inputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Covariates\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EventDate]"
-                              cachedDataType="dbTime"
+                              cachedDataType="dbDate"
                               cachedName="EventDate"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Covariates\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EventDate]"
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Covariates\Flat File Source.Outputs[Flat File Source Output].Columns[EventDate]" />
@@ -30941,7 +30941,7 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\Flat File Source.Outputs[Flat File Source Output].Columns[RecordedDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RecordedDate]"
@@ -30974,7 +30974,7 @@
                               name="EthnicityCode" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RecordedDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               name="RecordedDate" />
                           </externalMetadataColumns>
                         </output>
@@ -31095,7 +31095,7 @@
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\Flat File Source.Outputs[Flat File Source Output].Columns[EthnicityCode]" />
                             <inputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RecordedDate]"
-                              cachedDataType="dbTime"
+                              cachedDataType="dbDate"
                               cachedName="RecordedDate"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordedDate]"
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Ethnicity\Flat File Source.Outputs[Flat File Source Output].Columns[RecordedDate]" />
@@ -31301,7 +31301,7 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
@@ -31321,7 +31321,7 @@
                             </outputColumn>
                             <outputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].Columns[DeductionDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               errorOrTruncationOperation="Conversion"
                               errorRowDisposition="FailComponent"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DeductionDate]"
@@ -31512,11 +31512,11 @@
                               name="Description" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RegistrationDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               name="RegistrationDate" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DeductionDate]"
-                              dataType="dbTime"
+                              dataType="dbDate"
                               name="DeductionDate" />
                             <externalMetadataColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AppliedGMS]"
@@ -31685,13 +31685,13 @@
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].Columns[Description]" />
                             <inputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RegistrationDate]"
-                              cachedDataType="dbTime"
+                              cachedDataType="dbDate"
                               cachedName="RegistrationDate"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Registration\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegistrationDate]"
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].Columns[RegistrationDate]" />
                             <inputColumn
                               refId="Package\Foreach Loop Container\TPP Data Files\Registration\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DeductionDate]"
-                              cachedDataType="dbTime"
+                              cachedDataType="dbDate"
                               cachedName="DeductionDate"
                               externalMetadataColumnId="Package\Foreach Loop Container\TPP Data Files\Registration\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionDate]"
                               lineageId="Package\Foreach Loop Container\TPP Data Files\Registration\Flat File Source.Outputs[Flat File Source Output].Columns[DeductionDate]" />
